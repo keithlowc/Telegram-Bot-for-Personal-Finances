@@ -1,0 +1,6 @@
+telegram==0.0.1
+gspread==3.0.0
+pytesseract==0.1.6
+Image==1.5.24
+Pillow==5.1.0
+google_api_python_client==1.6.7
