@@ -3,6 +3,11 @@ from oauth2client.service_account import ServiceAccountCredentials
 import time
 import config 
 
+'''
+Created by Keithlowc
+Connects to gdrive sheets
+'''
+
 date = str(time.strftime("%d/%m/%Y"))
 
 # use creds to create a client to interact with the Google Drive API
@@ -42,7 +47,7 @@ def delete_latest():
 			sheet.update_cell(total,3,'') #updates date
 			return last_val
 	
-def search_number_string(String): #Parses digits from text
+def search_number_string(String):
     index_list = []
     del index_list[:]
     for i, x in enumerate(String):

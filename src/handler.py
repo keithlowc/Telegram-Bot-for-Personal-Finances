@@ -37,12 +37,9 @@ Source Code Made by caiopoliveira@gmail.com
 Source on https://github.com/caiopo/tesseract-bot
 
 Sheets Bot Updater code made by keithlowc@gmail.com EE @ CCNY
+Code on https://github.com/keithlowc/Telegram-Bot-for-Personal-Finances
 
 """
-
-# /setcommands
-# lang - query or set your current language
-# help - detailed information about the bot
 
 DEFAULT_LANG = 'eng'
 
