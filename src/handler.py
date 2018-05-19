@@ -26,18 +26,20 @@ fra  -> French
 ita  -> Italian
 jpn  -> Japaneses
 
-To display total of all receipts send `/total`
+-TO DISPLAY TOTAL, SEND ME `/total`
 
-To delete the latest uploaded value send `/delete`
+-TO DELETE LATEST UPLOADED VALUE, SEND ME `/delete`
 
-In group chats I will only parse the latest image when someone
+-TO INPUT MANUAL VALUE, SEND ME `/manual <DIGITS> <THING>`
+
+-In group chats I will only parse the latest image when someone
 sends me `/tesseract`
 
 Source Code Made by caiopoliveira@gmail.com
 Source on https://github.com/caiopo/tesseract-bot
 
 Sheets Bot Updater code made by keithlowc@gmail.com EE @ CCNY
-Code on https://github.com/keithlowc/Telegram-Bot-for-Personal-Finances
+Source on https://github.com/keithlowc/Telegram-Bot-for-Personal-Finances
 
 """
 
@@ -57,7 +59,7 @@ available_langs = {'eng' : 'English',
 
 def start(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id,
-		text="Hello! I'm Tesseract Bot!\n\n"+help_text,
+		text="Hi! this is Fin-Bot your personal financial assistant!\n"+help_text,
 		parse_mode=telegram.ParseMode.MARKDOWN,
 		disable_web_page_preview=True)
 
@@ -133,7 +135,7 @@ def _photosize_to_parsed(bot, update, photosize):
 		####################################################################
 
 		if sanitized_string:
-			tele_response_msg = 'Parsed in {}:\n\n```\n{}\n```'.format(available_langs[language], sanitized_string)
+			tele_response_msg = sanitized_string
 		else:
 			response_msg = 'Nothing found! :(\nParsed in {}'.format(available_langs[language])
 
@@ -180,7 +182,18 @@ def totalvalues(bot,update):
 
 def delete_last(bot,update):
 	deleted = gdrive.delete_latest()
-	bot.sendMessage(chat_id=update.message.chat_id,text='Deleted Last Value = ' + str(deleted))
+	if deleted == False:
+		bot.sendMessage(chat_id=update.message.chat_id,text='There is nothing else to delete!')
+	else:
+		bot.sendMessage(chat_id=update.message.chat_id,text='Deleted Last Value = ' + str(deleted))
+
+def update_manually(bot,update):
+	if len(update.message.text.split(' ')) == 3:
+		_, digits,text = update.message.text.split(' ')
+		gdrive.update_sheet(digits,text)
+		bot.sendMessage(chat_id=update.message.chat_id,text= '$' + str(digits) + ' Spent at/for ' + str(text) + ', was saved succesfully!')
+	else:
+		bot.sendMessage(chat_id=update.message.chat_id,text='Your format is incorrect! Make sure to type in this format: /manual <DIGITS> <THING>')
 
 ####################################################################
 #######################  EDITED By Keith Low #######################

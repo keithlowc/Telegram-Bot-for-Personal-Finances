@@ -38,8 +38,10 @@ def main():
 	dispatcher.addTelegramCommandHandler('help', handler.help)
 	dispatcher.addTelegramCommandHandler('lang', handler.lang)
 	dispatcher.addTelegramCommandHandler('tesseract', handler.tesseract)
+	
 	dispatcher.addTelegramCommandHandler('total',handler.totalvalues)
 	dispatcher.addTelegramCommandHandler('delete',handler.delete_last)
+	dispatcher.addTelegramCommandHandler('manual',handler.update_manually)
 
 	dispatcher.addTelegramMessageHandler(handler.message)
 
