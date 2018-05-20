@@ -41,8 +41,6 @@ Send these commands to your bot:
 
 ### Google Sheet example:
 
-https://docs.google.com/spreadsheets/d/1l7amdEOr4CWH61CDB-rNk_dWVIAVzNWoUMI8YfZJIMQ/edit?usp=sharing
-
 ![image](https://user-images.githubusercontent.com/25104394/40214652-f3f36c48-5a29-11e8-828b-6b76a34ecb78.png)
 
 
