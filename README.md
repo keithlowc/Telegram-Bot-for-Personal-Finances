@@ -40,6 +40,9 @@ Send these commands to your bot:
 4. `/manual <DIGITS> <THING>` Will manually input the Digits and save the Thing
 
 ### Google Sheet example:
+
+https://docs.google.com/spreadsheets/d/1l7amdEOr4CWH61CDB-rNk_dWVIAVzNWoUMI8YfZJIMQ/edit?usp=sharing
+
 ![image](https://user-images.githubusercontent.com/25104394/40214652-f3f36c48-5a29-11e8-828b-6b76a34ecb78.png)
 
 
@@ -47,4 +50,5 @@ Send these commands to your bot:
 
 1. When taking the picture of the receipt make sure to crop over the price as clean as possible, to avoid any problems with OCR.
 2. To stop the script `pkill -f tesseract_bot.py`
+3. May exceed Googles Developer Console quota after a long usage
 
