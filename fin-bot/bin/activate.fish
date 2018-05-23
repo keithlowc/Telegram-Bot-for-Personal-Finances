@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/keithlow/Desktop/tesseract-bot-master/telegram"
+set -gx VIRTUAL_ENV "/Users/keithlow/Desktop/testgram/Telegram-Bot-for-Personal-Finances/fin-bot"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

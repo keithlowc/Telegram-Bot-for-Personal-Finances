@@ -18,7 +18,7 @@ pip3 install -r requirements.txt
 
 ### To run with Virtual-environment:
 
-`source telegram/bin/activate`
+`source fin-bot/bin/activate`
 
 `python3 tesseract_bot.py`
 

@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/keithlow/Desktop/tesseract-bot-master/telegram"
+VIRTUAL_ENV="/Users/keithlow/Desktop/testgram/Telegram-Bot-for-Personal-Finances/fin-bot"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
