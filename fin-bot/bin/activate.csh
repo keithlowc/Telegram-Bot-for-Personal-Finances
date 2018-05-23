@@ -7,7 +7,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/Users/keithlow/Desktop/tesseract-bot-master/telegram"
+setenv VIRTUAL_ENV "/Users/keithlow/Desktop/testgram/Telegram-Bot-for-Personal-Finances/fin-bot"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"
