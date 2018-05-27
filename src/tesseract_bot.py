@@ -6,7 +6,9 @@ import argparse
 import config
 import errno
 import os
-from telegram import Updater
+from telegram.ext import Updater
+from telegram.ext import CommandHandler
+from telegram.ext import MessageHandler, Filters
 
 def resolve_args():
 	parser = argparse.ArgumentParser()
@@ -34,18 +36,30 @@ def main():
 
 	print(updater.bot.getMe())
 
-	dispatcher.addTelegramCommandHandler('start', handler.start)
-	dispatcher.addTelegramCommandHandler('help', handler.help)
-	dispatcher.addTelegramCommandHandler('lang', handler.lang)
-	dispatcher.addTelegramCommandHandler('tesseract', handler.tesseract)
-	
-	dispatcher.addTelegramCommandHandler('total',handler.totalvalues)
-	dispatcher.addTelegramCommandHandler('delete',handler.delete_last)
-	dispatcher.addTelegramCommandHandler('manual',handler.update_manually)
+	start_handler = CommandHandler('start', handler.start)
+	dispatcher.add_handler(start_handler)
 
-	dispatcher.addTelegramMessageHandler(handler.message)
+	help_handler = CommandHandler('help', handler.help)
+	dispatcher.add_handler(help_handler)
 
-	dispatcher.addUnknownTelegramCommandHandler(handler.unknown)
+	lang_handler = CommandHandler('lang',handler.lang)
+	dispatcher.add_handler(lang_handler)
+
+	tesseract_handler = CommandHandler('tesseract',handler.tesseract)
+	dispatcher.add_handler(tesseract_handler)
+
+	total_handler = CommandHandler('total',handler.totalvalues)
+	dispatcher.add_handler(total_handler)
+
+	delete_handler = CommandHandler('delete',handler.delete_last)
+	dispatcher.add_handler(delete_handler)
+
+	manual_handler = CommandHandler('manual',handler.update_manually)
+	dispatcher.add_handler(manual_handler)
+
+	unknown_handler = MessageHandler(Filters.command,handler.unknown)
+	dispatcher.add_handler(unknown_handler)
+
 
 	updater.start_polling()
 
