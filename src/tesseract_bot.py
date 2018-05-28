@@ -57,6 +57,9 @@ def main():
 	manual_handler = CommandHandler('manual',handler.update_manually)
 	dispatcher.add_handler(manual_handler)
 
+	message_handler = MessageHandler(Filters.photo,handler.messages)
+	dispatcher.add_handler(message_handler)
+
 	unknown_handler = MessageHandler(Filters.command,handler.unknown)
 	dispatcher.add_handler(unknown_handler)
 
